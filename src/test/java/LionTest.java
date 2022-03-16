@@ -10,7 +10,7 @@ public class LionTest {
 
     @Test
     public void testN1t() throws Exception {
-        Lion l1 = new Lion("Самка",new Feline());
+        Lion l1 = new Lion("Самка");
         l1.doesHaveMane();
         assertEquals(false,  l1.doesHaveMane());
     }
