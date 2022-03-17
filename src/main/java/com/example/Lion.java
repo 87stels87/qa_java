@@ -6,11 +6,6 @@ public class Lion {
 
     boolean hasMane;
 
-    public Lion(){
-
-    }
-
-
     public void setFeline(Feline feline) {
         this.feline = feline;
     }
