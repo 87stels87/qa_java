@@ -1,3 +1,5 @@
+
+import com.example.Feline;
 import com.example.Lion;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -5,9 +7,11 @@ import org.junit.runners.Parameterized;
 
 import static org.junit.Assert.assertEquals;
 
-// Создал тестовый класс с параметрами для тестирования класса Lion
+
+//тестовый класс с параметрами для тестирования класса Lion
 @RunWith(Parameterized.class)
 public class LionDoesHaveManeWithParameterizedTest {
+    Feline feline = new Feline();
     private final String sex;
     private final boolean expected;
 
@@ -26,10 +30,12 @@ public class LionDoesHaveManeWithParameterizedTest {
 
     @Test
     public void testDoesHaveMane() throws Exception {
-        Lion lion = new Lion(sex);
-        boolean actual = lion.doesHaveMane(); // обратились к полям тестового класса
-        assertEquals(expected, actual); // сравнили ожидаемый и фактический результат
+        Lion lion = new Lion(sex,feline);
+        boolean actual = lion.doesHaveMane();
+        assertEquals(expected, actual);
     }
 }
+
+
 
 

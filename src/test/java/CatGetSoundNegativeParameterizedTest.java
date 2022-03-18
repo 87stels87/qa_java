@@ -1,11 +1,10 @@
 import com.example.Cat;
 import com.example.Feline;
-import com.example.Lion;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotEquals;
 
 @RunWith(Parameterized.class)
 public class CatGetSoundNegativeParameterizedTest {
@@ -37,7 +36,5 @@ public class CatGetSoundNegativeParameterizedTest {
         String actual = cat.getSound();
         assertNotEquals("Подаваемые для сравнения варианты не должны быть равны Мяу", expected, actual);
     }
-
-
 }
 

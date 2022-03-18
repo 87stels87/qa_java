@@ -1,28 +1,17 @@
-import com.example.*;
+import com.example.Cat;
+import com.example.Feline;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnitRunner;
 
+import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
-@RunWith(MockitoJUnitRunner.class)
 public class CatTest {
-
-    @Mock
-    Feline feline;
-    @Mock
-    Predator predator;
-    @Mock
-    Cat cat;
-
 
     @Test
     public void testPositiveGetSoundCat() {
+        Feline feline = new Feline();
         Cat cat = new Cat(feline);
         String actual = cat.getSound();
         String expected = "Мяу";
@@ -31,34 +20,13 @@ public class CatTest {
 
     @Test
     public void testGetFoodForCat() throws Exception {
+        Feline feline = new Feline();
         Cat cat = new Cat(feline);
-        List<String> actual = cat.getFood();
-        List<String> expected = predator.eatMeat();
-        assertEquals("Сравненине списков еды хищника и созданного объекта cat", expected, actual);
+        List<String> expectedEatMeat = Arrays.asList("Животные", "Птицы", "Рыба");
+        List<String> actualEatMeat = cat.getFood();
+        assertEquals(expectedEatMeat, actualEatMeat);
+
     }
-
-    @Test
-    public void testCountGetSound() {
-        cat.getSound();
-        cat.getSound();
-        cat.getSound();
-        Mockito.verify(cat, Mockito.times(3)).getSound();
-    }
-
-    @Test
-    public void testCountGetFood() throws Exception {
-        cat.getFood();
-        cat.getFood();
-        Mockito.verify(cat, Mockito.times(2)).getFood();
-    }
-
-    @Test
-    public void testCountEatMeat() throws Exception {
-        predator.eatMeat();
-        Mockito.verify(predator, Mockito.times(1)).eatMeat();
-    }
-
-
 }
 
 
