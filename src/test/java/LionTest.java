@@ -39,7 +39,6 @@ public class LionTest {
         assertEquals("Количество львят при создании объекта lion = 0", expected, actual);
     }
 
-
     @Test
     public void testGetFoodForPredator() throws Exception {
         Feline feline = new Feline();
@@ -48,7 +47,6 @@ public class LionTest {
         assertEquals("Для Хищника коллекция еды = Животные, Птица и Рыба", expected, actual);
     }
 
-
     @Test
     public void testGetFoodForHerbivore() throws Exception {
         Feline feline = new Feline();
@@ -56,7 +54,6 @@ public class LionTest {
         List<String> expected = Arrays.asList("Трава", "Различные растения");
         assertEquals("Для Травоядного коллекция еды = Трава, Различные расстения", expected, actual);
     }
-
 
     @Test
     public void testGetFoodForLion() throws Exception {
