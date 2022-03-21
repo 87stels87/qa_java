@@ -28,6 +28,6 @@ public class FelineGetKittensParameterizedTest {
     public void testGetKittensWithArgument() {
         Feline feline = new Feline();
         int actual = feline.getKittens(expected);
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals("Серия проверок с параметрами на количество детенышей", expected, actual);
     }
 }

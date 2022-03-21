@@ -21,7 +21,7 @@ public class LionDoesHaveManeWithParameterizedTest {
     }
 
     @Parameterized.Parameters
-    public static Object[] hasMane () {
+    public static Object[] hasMane() {
         return new Object[][]{
                 {"Самец", true},
                 {"Самка", false},// передали 2 комплекта тестовых данных
@@ -30,9 +30,9 @@ public class LionDoesHaveManeWithParameterizedTest {
 
     @Test
     public void testDoesHaveMane() throws Exception {
-        Lion lion = new Lion(sex,feline);
+        Lion lion = new Lion(sex, feline);
         boolean actual = lion.doesHaveMane();
-        assertEquals(expected, actual);
+        assertEquals("Параметризованный тест на проврку наличия гривы", expected, actual);
     }
 }
 

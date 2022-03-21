@@ -14,9 +14,8 @@ public class AlexTest {
         Alex alex = new Alex(feline);
         List<String> actual = alex.getFriends();
         List<String> expected = Arrays.asList("Марти", "Глори", "Мелман");
-        assertEquals(actual, expected);
+        assertEquals("Друзья Алекса = Марти, Глори, Мелман", expected, actual);
     }
-
 
 
     @Test
@@ -25,7 +24,7 @@ public class AlexTest {
         Alex alex = new Alex(feline);
         String actual = alex.getPlaceOfLiving();
         String expected = "Нью-Йорк";
-        assertEquals(actual, expected);
+        assertEquals("Алекс живет в Нью-йорке", expected, actual);
     }
 
     @Test
@@ -34,7 +33,7 @@ public class AlexTest {
         Alex alex = new Alex(feline);
         int actual = alex.getKittens();
         int expected = 0;
-        assertEquals(actual, expected);
+        assertEquals("Количество львят у Алекса = 0", expected, actual);
     }
 
     @Test
@@ -43,7 +42,7 @@ public class AlexTest {
         Alex alex = new Alex(feline);
         String actual = alex.getSex();
         String expected = "Самец";
-        assertEquals(actual, expected);
+        assertEquals("Алекс - самец", expected, actual);
     }
 
 }
