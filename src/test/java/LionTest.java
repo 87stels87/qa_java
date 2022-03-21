@@ -1,5 +1,6 @@
 import com.example.Feline;
 import com.example.Lion;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -10,17 +11,22 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.fail;
 
 @RunWith(MockitoJUnitRunner.class)
 public class LionTest {
     @Mock
     Feline feline;
 
-    // тест проверит выбрасывается ли исключение при передаче в конструктор класса неверного значения
-    @Test(expected = Exception.class)
-    public void testDoesHaveManeException() throws Exception {
-        Lion lion = new Lion("Самка1", feline);
-        lion.doesHaveMane();
+    // тест проверит текст исключения:
+    @Test(expected = AssertionError.class)
+    public void testDoesHaveManeException() throws AssertionError {
+        try {
+            Lion lion = new Lion("Самка1", feline);
+            fail("Expected AssertionError");
+        } catch (Exception thrown) {
+            Assert.assertNotEquals("Используйте допустимые значения пола животного - самец или самка", thrown.getMessage());
+        }
     }
 
     @Test
