@@ -19,7 +19,7 @@ public class LionDoesHaveManeWithParameterizedTest {
         this.expected = expected;
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Пол животного и наличие гривы:{0} {1}")
     public static Object[] hasMane() {
         return new Object[][]{
                 {"Самец", true},

@@ -15,7 +15,7 @@ public class FelineGetKittensParameterizedTest {
         this.expected = expected;
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "Количестов детенышей: {0}")
     public static Object[][] getKittensData() {
         return new Object[][]{
                 {1},
@@ -28,6 +28,6 @@ public class FelineGetKittensParameterizedTest {
     public void testGetKittensWithArgument() {
         Feline feline = new Feline();
         int actual = feline.getKittens(expected);
-        Assert.assertEquals("Серия проверок с параметрами на количество детенышей", expected, actual);
+        Assert.assertEquals("Серия проверок на проверку возврата количества детенышей", expected, actual);
     }
 }
