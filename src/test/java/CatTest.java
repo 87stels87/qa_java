@@ -25,7 +25,6 @@ public class CatTest {
         List<String> expectedEatMeat = Arrays.asList("Животные", "Птицы", "Рыба");
         List<String> actualEatMeat = cat.getFood();
         assertEquals("Кошка питается животными, птицой и рыбой", expectedEatMeat, actualEatMeat);
-
     }
 }
 

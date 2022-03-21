@@ -7,7 +7,6 @@ import org.junit.runners.Parameterized;
 
 import static org.junit.Assert.assertEquals;
 
-
 //тестовый класс с параметрами для тестирования класса Lion
 @RunWith(Parameterized.class)
 public class LionDoesHaveManeWithParameterizedTest {

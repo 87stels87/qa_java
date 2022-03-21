@@ -16,7 +16,6 @@ public class CatGetSoundNegativeParameterizedTest {
         this.expected = expected;
     }
 
-
     @Parameterized.Parameters
     public static Object[] checkedSound() {
         return new Object[][]{

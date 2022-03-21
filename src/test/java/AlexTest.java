@@ -17,7 +17,6 @@ public class AlexTest {
         assertEquals("Друзья Алекса = Марти, Глори, Мелман", expected, actual);
     }
 
-
     @Test
     public void testGetPlaceOfLiving() throws Exception {
         Feline feline = new Feline();
