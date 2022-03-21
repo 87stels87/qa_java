@@ -28,7 +28,7 @@ public class LionTest {
         Lion lion = new Lion("Самец", feline);
         boolean expectedHasMane = true;
         boolean actualHasMane = lion.doesHaveMane();
-        assertEquals(expectedHasMane, actualHasMane);
+        assertEquals("Создается объекс с sex = Самец (true)", expectedHasMane, actualHasMane);
     }
 
     @Test
@@ -36,7 +36,7 @@ public class LionTest {
         Lion lion = new Lion("Самец", feline);
         int actual = lion.getKittens();
         int expected = 0;
-        assertEquals(actual, expected);
+        assertEquals("Количество львят при создании объекта lion = 0", expected, actual);
     }
 
 
@@ -45,7 +45,7 @@ public class LionTest {
         Feline feline = new Feline();
         List<String> actual = feline.getFood("Хищник");
         List<String> expected = Arrays.asList("Животные", "Птицы", "Рыба");
-        assertEquals(actual, expected);
+        assertEquals("Для Хищника коллекция еды = Животные, Птица и Рыба", expected, actual);
     }
 
 
@@ -54,7 +54,7 @@ public class LionTest {
         Feline feline = new Feline();
         List<String> actual = feline.getFood("Травоядное");
         List<String> expected = Arrays.asList("Трава", "Различные растения");
-        assertEquals(actual, expected);
+        assertEquals("Для Травоядного коллекция еды = Трава, Различные расстения", expected, actual);
     }
 
 
@@ -64,7 +64,7 @@ public class LionTest {
         Mockito.when(feline.getFood("Хищник")).thenReturn(Arrays.asList("Животные", "Птицы", "Рыба"));
         List<String> expectedEatMeat = Arrays.asList("Животные", "Птицы", "Рыба");
         List<String> actualEatMeat = lion.getFood();
-        assertEquals(expectedEatMeat, actualEatMeat);
+        assertEquals("Мок на возврат значений Животные, птицы и рыбы для хищника", expectedEatMeat, actualEatMeat);
     }
 }
 
